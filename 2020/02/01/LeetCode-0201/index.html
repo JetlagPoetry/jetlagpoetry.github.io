@@ -46,19 +46,19 @@
   };
 </script>
 
-  <meta name="description" content="14Easy. 1122Easy.">
+  <meta name="description" content="28Easy. 35Easy. 38Easy.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-0128">
-<meta property="og:url" content="https://jetlagpoetry.github.io/2020/01/28/LeetCode-0128/index.html">
+<meta property="og:title" content="LeetCode-0201">
+<meta property="og:url" content="https://jetlagpoetry.github.io/2020/02/01/LeetCode-0201/index.html">
 <meta property="og:site_name" content="Days with Runrun">
-<meta property="og:description" content="14Easy. 1122Easy.">
+<meta property="og:description" content="28Easy. 35Easy. 38Easy.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-28T16:43:33.000Z">
-<meta property="article:modified_time" content="2020-01-30T01:13:19.642Z">
+<meta property="article:published_time" content="2020-02-01T05:00:00.000Z">
+<meta property="article:modified_time" content="2020-02-02T15:15:34.014Z">
 <meta property="article:author" content="Jingyuan">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://jetlagpoetry.github.io/2020/01/28/LeetCode-0128/">
+<link rel="canonical" href="https://jetlagpoetry.github.io/2020/02/01/LeetCode-0201/">
 
 
 <script id="page-configurations">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>LeetCode-0128 | Days with Runrun</title>
+  <title>LeetCode-0201 | Days with Runrun</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://jetlagpoetry.github.io/2020/01/28/LeetCode-0128/">
+    <link itemprop="mainEntityOfPage" href="https://jetlagpoetry.github.io/2020/02/01/LeetCode-0201/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode-0128
+          LeetCode-0201
         </h1>
 
         <div class="post-meta">
@@ -212,14 +212,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-01-28 11:43:33" itemprop="dateCreated datePublished" datetime="2020-01-28T11:43:33-05:00">2020-01-28</time>
+              <time title="Created: 2020-02-01 00:00:00" itemprop="dateCreated datePublished" datetime="2020-02-01T00:00:00-05:00">2020-02-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-29 20:13:19" itemprop="dateModified" datetime="2020-01-29T20:13:19-05:00">2020-01-29</time>
+                <time title="Modified: 2020-02-02 10:15:34" itemprop="dateModified" datetime="2020-02-02T10:15:34-05:00">2020-02-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,7 @@
             </span>
 
           
-            <div class="post-description">14Easy. 1122Easy.</div>
+            <div class="post-description">28Easy. 35Easy. 38Easy.</div>
 
         </div>
       </header>
@@ -245,21 +245,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="14-Longest-Common-Prefix"><a href="#14-Longest-Common-Prefix" class="headerlink" title="14. Longest Common Prefix"></a>14. Longest Common Prefix</h2><p><strong><em>Easy</em></strong></p>
-<h5 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Write a function to find the longest common prefix string amongst an array of strings.<br>If there is no common prefix, return an empty string “”.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [&quot;flower&quot;,&quot;flow&quot;,&quot;flight&quot;]</span><br><span class="line">Output: &quot;fl&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [&quot;dog&quot;,&quot;racecar&quot;,&quot;car&quot;]</span><br><span class="line">Output: &quot;&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h5><ul>
-<li>2-layer nested for loop.<br>Iterate for each index in string, update prefix string if the character in all strings is the same, return otherwise. Also return if the end of a string is reached.</li>
-</ul>
-<h2 id="1122-Relative-Sort-Array"><a href="#1122-Relative-Sort-Array" class="headerlink" title="1122. Relative Sort Array"></a>1122. Relative Sort Array</h2><p><strong><em>Easy</em></strong></p>
-<h5 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Given two arrays arr1 and arr2, the elements of arr2 are distinct, and all elements in arr2 are also in arr1.<br>Sort the elements of arr1 such that the relative ordering of items in arr1 are the same as in arr2.  Elements that don’t appear in arr2 should be placed at the end of arr1 in ascending order.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: arr1 &#x3D; [2,3,1,3,2,4,6,7,9,2,19], arr2 &#x3D; [2,1,4,3,9,6]</span><br><span class="line">Output: [2,2,2,1,4,3,3,9,6,7,19]</span><br></pre></td></tr></table></figure>
+        <h2 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a>28. Implement strStr()</h2><p><strong><em>Easy</em></strong>      </p>
+<h5 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Implement strStr().<br>Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: haystack &#x3D; &quot;hello&quot;, needle &#x3D; &quot;ll&quot;</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: haystack &#x3D; &quot;aaaaa&quot;, needle &#x3D; &quot;bba&quot;</span><br><span class="line">Output: -1</span><br></pre></td></tr></table></figure>
+<h5 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h5><ol>
+<li>Set pointer to <em>haystack</em> and <em>needle</em>.</li>
+<li>For each element in <em>haystack</em>, verify if <em>needle</em> starts here using while loop.</li>
+<li>Return if pointer for <em>needle</em> reaches the end. Return -1 if not found.</li>
+</ol>
+<h2 id="35-Search-Insert-Position"><a href="#35-Search-Insert-Position" class="headerlink" title="35. Search Insert Position"></a>35. Search Insert Position</h2><p><strong><em>Easy</em></strong>      </p>
+<h5 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.<br>You may assume no duplicates in the array.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,3,5,6], 5</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,3,5,6], 2</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure>
 
-<h5 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h5><ul>
-<li>2-layer nested for loop.<br>For each element <em>a2</em> in arr2, find all elements in arr1 that has the same value with a2, and swap them to the next correct position. </li>
-<li>2-layer nested for loop.<br>After the last operation, all elements in arr that appear in arr2 is moved to the right place, leaving behind elements that do not show in arr2 in the rear of array. So we use another nested loop to sort the rest of numbers.</li>
-</ul>
+<h5 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h5><p>Iterate elements in the array: Return current index if current value equals to target. Return current index if last is smaller than target while current is larger. Return value for index 0 and array length.</p>
+<h2 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38. Count and Say"></a>38. Count and Say</h2><p><strong><em>Easy</em></strong>      </p>
+<h5 id="Problem-Description-2"><a href="#Problem-Description-2" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>The count-and-say sequence is the sequence of integers with the first five terms as following:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br></pre></td></tr></table></figure>
+<p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.</p>
+<p>Given an integer n where 1 ≤ n ≤ 30, generate the nth term of the count-and-say sequence. You can do so recursively, in other words from the previous member read off the digits, counting the number of digits in groups of the same digit.</p>
+<p>Note: Each term of the sequence of integers will be represented as a string.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1</span><br><span class="line">Output: &quot;1&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 4</span><br><span class="line">Output: &quot;1211&quot;</span><br></pre></td></tr></table></figure>
+
+<h5 id="My-Solution-2"><a href="#My-Solution-2" class="headerlink" title="My Solution:"></a>My Solution:</h5><p>Loop <em>n</em> times, each time scan each elements of the last string:</p>
+<ol>
+<li>Count the number of consecutive char we last see and record the char. </li>
+<li>Add them to the current string if last char is different with current one.</li>
+<li>Move current string to last one.</li>
+</ol>
 
     </div>
 
@@ -275,12 +290,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/01/27/Tech-Vuetify/" rel="prev" title="Vuetify Installation">
-      <i class="fa fa-chevron-left"></i> Vuetify Installation
+    <a href="/2020/01/31/LeetCode-0131/" rel="prev" title="LeetCode-0131">
+      <i class="fa fa-chevron-left"></i> LeetCode-0131
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/01/29/LeetCode-0129/" rel="next" title="LeetCode-0129">
-      LeetCode-0129 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/02/02/LeetCode-0202/" rel="next" title="LeetCode-0202">
+      LeetCode-0202 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -341,7 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#14-Longest-Common-Prefix"><span class="nav-number">1.</span> <span class="nav-text">14. Longest Common Prefix</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1122-Relative-Sort-Array"><span class="nav-number">2.</span> <span class="nav-text">1122. Relative Sort Array</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#28-Implement-strStr"><span class="nav-number">1.</span> <span class="nav-text">28. Implement strStr()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35-Search-Insert-Position"><span class="nav-number">2.</span> <span class="nav-text">35. Search Insert Position</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38-Count-and-Say"><span class="nav-number">3.</span> <span class="nav-text">38. Count and Say</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description-2"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution-2"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
