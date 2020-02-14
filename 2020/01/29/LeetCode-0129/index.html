@@ -54,7 +54,7 @@
 <meta property="og:description" content="31Medium. 36Medium. 49Medium.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-29T16:43:18.000Z">
-<meta property="article:modified_time" content="2020-01-30T02:59:18.145Z">
+<meta property="article:modified_time" content="2020-02-14T23:01:46.510Z">
 <meta property="article:author" content="Jingyuan">
 <meta name="twitter:card" content="summary">
 
@@ -211,10 +211,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-01-29 11:43:18 / Modified: 21:59:18" itemprop="dateCreated datePublished" datetime="2020-01-29T11:43:18-05:00">2020-01-29</time>
+              <time title="Created: 2020-01-29 11:43:18" itemprop="dateCreated datePublished" datetime="2020-01-29T11:43:18-05:00">2020-01-29</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-14 18:01:46" itemprop="dateModified" datetime="2020-02-14T18:01:46-05:00">2020-02-14</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -239,17 +245,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="31-Next-Permutation"><a href="#31-Next-Permutation" class="headerlink" title="31. Next Permutation"></a>31. Next Permutation</h2><p><strong><em>Medium</em></strong></p>
-<h5 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.<br>If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).<br>The replacement must be in-place and use only constant extra memory.<br>Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.</p>
+        <h2 id="31-Next-Permutation"><a href="#31-Next-Permutation" class="headerlink" title="31-Next Permutation"></a>31-Next Permutation</h2><p><strong><em>Medium</em></strong></p>
+<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.<br>If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).<br>The replacement must be in-place and use only constant extra memory.<br>Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1,2,3 → 1,3,2</span><br><span class="line">3,2,1 → 1,2,3</span><br><span class="line">1,1,5 → 1,5,1</span><br></pre></td></tr></table></figure>
-<h5 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h5><ol>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h3><ol>
 <li>Search the array from the rear, find the first pair of elements such that <em>nums[i-1]</em> is smaller than <em>nums[i]</em>. Save index <em>i</em>.</li>
 <li>Then find the smallest number indiced at <em>min</em> in <em>num[i:]</em> that is larger than <em>nums[i-1]</em>.</li>
 <li>Swap element <em>nums[i-1]</em> with <em>nums[min]</em>.</li>
 <li>Sort nums[i:] in ascending order.</li>
 </ol>
-<h2 id="31-Valid-Sudoku"><a href="#31-Valid-Sudoku" class="headerlink" title="31. Valid Sudoku"></a>31. Valid Sudoku</h2><p><strong><em>Medium</em></strong></p>
-<h5 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:</p>
+<h2 id="36-Valid-Sudoku"><a href="#36-Valid-Sudoku" class="headerlink" title="36-Valid Sudoku"></a>36-Valid Sudoku</h2><p><strong><em>Medium</em></strong></p>
+<h3 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Determine if a 9x9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:</p>
 <ol>
 <li>Each row must contain the digits 1-9 without repetition.</li>
 <li>Each column must contain the digits 1-9 without repetition.</li>
@@ -257,19 +263,19 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  [&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;],</span><br><span class="line">  [&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]</span><br><span class="line">]</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  [&quot;8&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;],</span><br><span class="line">  [&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;],</span><br><span class="line">  [&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;],</span><br><span class="line">  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]</span><br><span class="line">]</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure>
-<h5 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h5><p>A very simple O(n^4) solution. (COMP208 gives this as final exam question and the students first learn programming can solve it)</p>
+<h3 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>A very simple O(n^4) solution. (COMP208 gives this as final exam question and the students first learn programming can solve it)</p>
 <ul>
 <li>O(n^2) nested for loop<br>Examine if there are repetition in each row.</li>
 <li>O(n^2) nested for loop<br>Examine if there are repetition in each column.</li>
 <li>O(n^4) nested for loop<br>Examine if there are repetition in each 3x3 grid.</li>
 </ul>
 <p>Add each char to a string and use <em>indexOf()</em> to search for repetition.</p>
-<h2 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a>49. Group Anagrams</h2><p><strong><em>Medium</em></strong></p>
-<h5 id="Problem-Description-2"><a href="#Problem-Description-2" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Given an array of strings, group anagrams together.</p>
+<h2 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49-Group Anagrams"></a>49-Group Anagrams</h2><p><strong><em>Medium</em></strong></p>
+<h3 id="Problem-Description-2"><a href="#Problem-Description-2" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given an array of strings, group anagrams together.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: [&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;],</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;],</span><br><span class="line">  [&quot;nat&quot;,&quot;tan&quot;],</span><br><span class="line">  [&quot;bat&quot;]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<h5 id="My-Solution-2"><a href="#My-Solution-2" class="headerlink" title="My Solution:"></a>My Solution:</h5><p>Use a <em>HashMap</em> to store each string with its sorted form and return values of the map.<br>Key: Sorted string.<br>Value: List of all the strings that has this sorted form.</p>
-<h5 id="API-Notes"><a href="#API-Notes" class="headerlink" title="API Notes"></a>API Notes</h5><ul>
+<h3 id="My-Solution-2"><a href="#My-Solution-2" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>Use a <em>HashMap</em> to store each string with its sorted form and return values of the map.<br>Key: Sorted string.<br>Value: List of all the strings that has this sorted form.</p>
+<h3 id="API-Notes"><a href="#API-Notes" class="headerlink" title="API Notes"></a>API Notes</h3><ul>
 <li>Sort a string<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">char[] ca &#x3D; strs[i].toCharArray();</span><br><span class="line">Arrays.sort(ca);</span><br><span class="line">String key &#x3D; String.valueOf(ca);</span><br></pre></td></tr></table></figure></li>
 <li>Put values of a map into a list<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new ArrayList(map.values())</span><br></pre></td></tr></table></figure></li>
 </ul>
@@ -354,7 +360,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#31-Next-Permutation"><span class="nav-number">1.</span> <span class="nav-text">31. Next Permutation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-Valid-Sudoku"><span class="nav-number">2.</span> <span class="nav-text">31. Valid Sudoku</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#49-Group-Anagrams"><span class="nav-number">3.</span> <span class="nav-text">49. Group Anagrams</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description-2"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution-2"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#API-Notes"><span class="nav-number">3.0.0.3.</span> <span class="nav-text">API Notes</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#31-Next-Permutation"><span class="nav-number">1.</span> <span class="nav-text">31-Next Permutation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#36-Valid-Sudoku"><span class="nav-number">2.</span> <span class="nav-text">36-Valid Sudoku</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#49-Group-Anagrams"><span class="nav-number">3.</span> <span class="nav-text">49-Group Anagrams</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">My Solution:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API-Notes"><span class="nav-number">3.3.</span> <span class="nav-text">API Notes</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -368,7 +374,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

@@ -54,7 +54,7 @@
 <meta property="og:description" content="28Easy. 35Easy. 38Easy.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-01T05:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-02T15:15:34.014Z">
+<meta property="article:modified_time" content="2020-02-14T23:00:59.410Z">
 <meta property="article:author" content="Jingyuan">
 <meta name="twitter:card" content="summary">
 
@@ -219,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-02 10:15:34" itemprop="dateModified" datetime="2020-02-02T10:15:34-05:00">2020-02-02</time>
+                <time title="Modified: 2020-02-14 18:00:59" itemprop="dateModified" datetime="2020-02-14T18:00:59-05:00">2020-02-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,23 +245,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28. Implement strStr()"></a>28. Implement strStr()</h2><p><strong><em>Easy</em></strong>      </p>
-<h5 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Implement strStr().<br>Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
+        <h2 id="28-Implement-strStr"><a href="#28-Implement-strStr" class="headerlink" title="28-Implement strStr()"></a>28-Implement strStr()</h2><p><strong><em>Easy</em></strong>      </p>
+<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Implement strStr().<br>Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: haystack &#x3D; &quot;hello&quot;, needle &#x3D; &quot;ll&quot;</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: haystack &#x3D; &quot;aaaaa&quot;, needle &#x3D; &quot;bba&quot;</span><br><span class="line">Output: -1</span><br></pre></td></tr></table></figure>
-<h5 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h5><ol>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h3><ol>
 <li>Set pointer to <em>haystack</em> and <em>needle</em>.</li>
 <li>For each element in <em>haystack</em>, verify if <em>needle</em> starts here using while loop.</li>
 <li>Return if pointer for <em>needle</em> reaches the end. Return -1 if not found.</li>
 </ol>
-<h2 id="35-Search-Insert-Position"><a href="#35-Search-Insert-Position" class="headerlink" title="35. Search Insert Position"></a>35. Search Insert Position</h2><p><strong><em>Easy</em></strong>      </p>
-<h5 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.<br>You may assume no duplicates in the array.</p>
+<h2 id="35-Search-Insert-Position"><a href="#35-Search-Insert-Position" class="headerlink" title="35-Search Insert Position"></a>35-Search Insert Position</h2><p><strong><em>Easy</em></strong>      </p>
+<h3 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.<br>You may assume no duplicates in the array.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,3,5,6], 5</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,3,5,6], 2</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure>
 
-<h5 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h5><p>Iterate elements in the array: Return current index if current value equals to target. Return current index if last is smaller than target while current is larger. Return value for index 0 and array length.</p>
-<h2 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38. Count and Say"></a>38. Count and Say</h2><p><strong><em>Easy</em></strong>      </p>
-<h5 id="Problem-Description-2"><a href="#Problem-Description-2" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>The count-and-say sequence is the sequence of integers with the first five terms as following:</p>
+<h3 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>Iterate elements in the array: Return current index if current value equals to target. Return current index if last is smaller than target while current is larger. Return value for index 0 and array length.</p>
+<h2 id="38-Count-and-Say"><a href="#38-Count-and-Say" class="headerlink" title="38-Count and Say"></a>38-Count and Say</h2><p><strong><em>Easy</em></strong>      </p>
+<h3 id="Problem-Description-2"><a href="#Problem-Description-2" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>The count-and-say sequence is the sequence of integers with the first five terms as following:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.     1</span><br><span class="line">2.     11</span><br><span class="line">3.     21</span><br><span class="line">4.     1211</span><br><span class="line">5.     111221</span><br></pre></td></tr></table></figure>
 <p>1 is read off as “one 1” or 11.<br>11 is read off as “two 1s” or 21.<br>21 is read off as “one 2, then one 1” or 1211.</p>
 <p>Given an integer n where 1 ≤ n ≤ 30, generate the nth term of the count-and-say sequence. You can do so recursively, in other words from the previous member read off the digits, counting the number of digits in groups of the same digit.</p>
@@ -269,7 +269,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 1</span><br><span class="line">Output: &quot;1&quot;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 4</span><br><span class="line">Output: &quot;1211&quot;</span><br></pre></td></tr></table></figure>
 
-<h5 id="My-Solution-2"><a href="#My-Solution-2" class="headerlink" title="My Solution:"></a>My Solution:</h5><p>Loop <em>n</em> times, each time scan each elements of the last string:</p>
+<h3 id="My-Solution-2"><a href="#My-Solution-2" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>Loop <em>n</em> times, each time scan each elements of the last string:</p>
 <ol>
 <li>Count the number of consecutive char we last see and record the char. </li>
 <li>Add them to the current string if last char is different with current one.</li>
@@ -356,7 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#28-Implement-strStr"><span class="nav-number">1.</span> <span class="nav-text">28. Implement strStr()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35-Search-Insert-Position"><span class="nav-number">2.</span> <span class="nav-text">35. Search Insert Position</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38-Count-and-Say"><span class="nav-number">3.</span> <span class="nav-text">38. Count and Say</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description-2"><span class="nav-number">3.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution-2"><span class="nav-number">3.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#28-Implement-strStr"><span class="nav-number">1.</span> <span class="nav-text">28-Implement strStr()</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35-Search-Insert-Position"><span class="nav-number">2.</span> <span class="nav-text">35-Search Insert Position</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38-Count-and-Say"><span class="nav-number">3.</span> <span class="nav-text">38-Count and Say</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -370,7 +370,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

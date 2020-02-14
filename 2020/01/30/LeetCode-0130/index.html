@@ -46,15 +46,15 @@
   };
 </script>
 
-  <meta name="description" content="930Medium. 575Easy.">
+  <meta name="description" content="930Medium* . 575Easy.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode-0130">
 <meta property="og:url" content="https://jetlagpoetry.github.io/2020/01/30/LeetCode-0130/index.html">
 <meta property="og:site_name" content="Days with Runrun">
-<meta property="og:description" content="930Medium. 575Easy.">
+<meta property="og:description" content="930Medium* . 575Easy.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-30T05:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-02T14:23:42.983Z">
+<meta property="article:modified_time" content="2020-02-14T23:01:21.547Z">
 <meta property="article:author" content="Jingyuan">
 <meta name="twitter:card" content="summary">
 
@@ -219,7 +219,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-02 09:23:42" itemprop="dateModified" datetime="2020-02-02T09:23:42-05:00">2020-02-02</time>
+                <time title="Modified: 2020-02-14 18:01:21" itemprop="dateModified" datetime="2020-02-14T18:01:21-05:00">2020-02-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,7 @@
             </span>
 
           
-            <div class="post-description">930Medium. 575Easy.</div>
+            <div class="post-description">930Medium* . 575Easy.</div>
 
         </div>
       </header>
@@ -245,22 +245,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="930-Binary-Subarrays-With-Sum"><a href="#930-Binary-Subarrays-With-Sum" class="headerlink" title="930. Binary Subarrays With Sum*"></a>930. Binary Subarrays With Sum*</h2><p><strong><em>Medium</em></strong>      </p>
-<h5 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>In an array A of 0s and 1s, how many non-empty subarrays have sum S?</p>
-<h5 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements:"></a>Requirements:</h5><p>Time: O(n)</p>
+        <h2 id="930-Binary-Subarrays-With-Sum"><a href="#930-Binary-Subarrays-With-Sum" class="headerlink" title="930-Binary Subarrays With Sum*"></a>930-Binary Subarrays With Sum*</h2><p><strong><em>Medium</em></strong>      </p>
+<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>In an array A of 0s and 1s, how many non-empty subarrays have sum S?</p>
+<h3 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements:"></a>Requirements:</h3><p>Time: O(n)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: A &#x3D; [1,0,1,0,1], S &#x3D; 2</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: </span><br><span class="line">The 4 subarrays are bolded below:</span><br><span class="line">[1,0,1,0,1]</span><br><span class="line">[1,0,1,0,1]</span><br><span class="line">[1,0,1,0,1]</span><br><span class="line">[1,0,1,0,1]</span><br></pre></td></tr></table></figure>
-<h5 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h5><p><strong>Time Limit Exceed:</strong>: Tried with a O(n^2) method, starting with each index, count all possible subarrays. </p>
-<h5 id="Preferred-Solution"><a href="#Preferred-Solution" class="headerlink" title="Preferred Solution:"></a>Preferred Solution:</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Let P[i] &#x3D; A[0] + A[1] + ... + A[i-1]. Then P[j+1] - P[i] &#x3D; A[i] + A[i+1] + ... + A[j], the sum of the subarray [i, j].</span><br><span class="line">Hence, we are looking for the number of i &lt; j with P[j] - P[i] &#x3D; S.</span><br></pre></td></tr></table></figure>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h3><p><strong>Time Limit Exceed:</strong>: Tried with a O(n^2) method, starting with each index, count all possible subarrays. </p>
+<h3 id="Preferred-Solution"><a href="#Preferred-Solution" class="headerlink" title="Preferred Solution:"></a>Preferred Solution:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Let P[i] &#x3D; A[0] + A[1] + ... + A[i-1]. Then P[j+1] - P[i] &#x3D; A[i] + A[i+1] + ... + A[j], the sum of the subarray [i, j].</span><br><span class="line">Hence, we are looking for the number of i &lt; j with P[j] - P[i] &#x3D; S.</span><br></pre></td></tr></table></figure>
 <ol>
 <li>First, O(n) to calculate array P.</li>
 <li>Search for how many pair of <em>P[i]</em> and <em>P[j]</em> satisfies <em>P[i]+S=P[j]</em>.<br> Use one for-loop to calculate <em>P[j]</em> and add the value of <em>map.P[j]</em> by 1.<br> Each time get map.P[i] as the count mapped to this value as P[j].</li>
 </ol>
-<h2 id="575-Distribute-Candies"><a href="#575-Distribute-Candies" class="headerlink" title="575. Distribute Candies"></a>575. Distribute Candies</h2><p><strong><em>Easy</em></strong>      </p>
-<h5 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h5><p>Given an integer array with even length, where different numbers in this array represent different kinds of candies. Each number means one candy of the corresponding kind. You need to distribute these candies equally in number to brother and sister. Return the maximum number of kinds of candies the sister could gain.</p>
+<h2 id="575-Distribute-Candies"><a href="#575-Distribute-Candies" class="headerlink" title="575-Distribute Candies"></a>575-Distribute Candies</h2><p><strong><em>Easy</em></strong>      </p>
+<h3 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given an integer array with even length, where different numbers in this array represent different kinds of candies. Each number means one candy of the corresponding kind. You need to distribute these candies equally in number to brother and sister. Return the maximum number of kinds of candies the sister could gain.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: candies &#x3D; [1,1,2,2,3,3]</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: candies &#x3D; [1,1,2,3]</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure>
 
-<h5 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h5><p>Use set to count number of unrepeated values.<br>Return the minimium between the value and half of the candies.</p>
+<h3 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>Use set to count number of unrepeated values.<br>Return the minimium between the value and half of the candies.</p>
 
     </div>
 
@@ -342,7 +342,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#930-Binary-Subarrays-With-Sum"><span class="nav-number">1.</span> <span class="nav-text">930. Binary Subarrays With Sum*</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Requirements"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">Requirements:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">My Solution:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Preferred-Solution"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Preferred Solution:</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#575-Distribute-Candies"><span class="nav-number">2.</span> <span class="nav-text">575. Distribute Candies</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#930-Binary-Subarrays-With-Sum"><span class="nav-number">1.</span> <span class="nav-text">930-Binary Subarrays With Sum*</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Requirements:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.3.</span> <span class="nav-text">My Solution:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Preferred-Solution"><span class="nav-number">1.4.</span> <span class="nav-text">Preferred Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#575-Distribute-Candies"><span class="nav-number">2.</span> <span class="nav-text">575-Distribute Candies</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -356,7 +356,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
