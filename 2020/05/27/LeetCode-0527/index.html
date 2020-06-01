@@ -46,19 +46,19 @@
   };
 </script>
 
-  <meta name="description" content="53Easy. 58Easy. 66Easy.">
+  <meta name="description" content="2Medium. 168Easy. 169Easy.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode-0202">
-<meta property="og:url" content="https://jetlagpoetry.github.io/2020/02/02/LeetCode-0202/index.html">
+<meta property="og:title" content="LeetCode-0527">
+<meta property="og:url" content="https://jetlagpoetry.github.io/2020/05/27/LeetCode-0527/index.html">
 <meta property="og:site_name" content="Days with Runrun">
-<meta property="og:description" content="53Easy. 58Easy. 66Easy.">
+<meta property="og:description" content="2Medium. 168Easy. 169Easy.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-02T05:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-14T23:00:48.806Z">
+<meta property="article:published_time" content="2020-05-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-01T06:24:37.791Z">
 <meta property="article:author" content="Jingyuan">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://jetlagpoetry.github.io/2020/02/02/LeetCode-0202/">
+<link rel="canonical" href="https://jetlagpoetry.github.io/2020/05/27/LeetCode-0527/">
 
 
 <script id="page-configurations">
@@ -70,7 +70,7 @@
   };
 </script>
 
-  <title>LeetCode-0202 | Days with Runrun</title>
+  <title>LeetCode-0527 | Days with Runrun</title>
   
 
 
@@ -189,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="https://jetlagpoetry.github.io/2020/02/02/LeetCode-0202/">
+    <link itemprop="mainEntityOfPage" href="https://jetlagpoetry.github.io/2020/05/27/LeetCode-0527/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCode-0202
+          LeetCode-0527
         </h1>
 
         <div class="post-meta">
@@ -212,14 +212,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-02-02 13:00:00" itemprop="dateCreated datePublished" datetime="2020-02-02T13:00:00+08:00">2020-02-02</time>
+              <time title="Created: 2020-05-27 00:00:00" itemprop="dateCreated datePublished" datetime="2020-05-27T00:00:00+08:00">2020-05-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-15 07:00:48" itemprop="dateModified" datetime="2020-02-15T07:00:48+08:00">2020-02-15</time>
+                <time title="Modified: 2020-06-01 14:24:37" itemprop="dateModified" datetime="2020-06-01T14:24:37+08:00">2020-06-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -234,7 +234,7 @@
             </span>
 
           
-            <div class="post-description">53Easy. 58Easy. 66Easy.</div>
+            <div class="post-description">2Medium. 168Easy. 169Easy.</div>
 
         </div>
       </header>
@@ -245,27 +245,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="53-Maximum-Subarray"><a href="#53-Maximum-Subarray" class="headerlink" title="53-Maximum Subarray"></a>53-Maximum Subarray</h2><p><strong><em>Easy</em></strong>      </p>
-<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [-2,1,-3,4,-1,2,1,-5,4],</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: [4,-1,2,1] has the largest sum &#x3D; 6.</span><br></pre></td></tr></table></figure>
-<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h3><ul>
-<li>O(n) for loop:<br>  Keep calculating the contiguous sum of array.<br>  Update the max sum value if new sum exceed previous one.<br>  Discard the accumulated sum if lower than 0.</li>
-</ul>
-<h2 id="58-Length-of-Last-Word"><a href="#58-Length-of-Last-Word" class="headerlink" title="58-Length of Last Word"></a>58-Length of Last Word</h2><p><strong><em>Easy</em></strong>      </p>
-<h3 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given a string s consists of upper/lower-case alphabets and empty space characters ‘ ‘, return the length of last word (last word means the last appearing word if we loop from left to right) in the string.<br>If the last word does not exist, return 0.<br>Note: A word is defined as a maximal substring consisting of non-space characters only.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;Hello World&quot;</span><br><span class="line">Output: 5</span><br></pre></td></tr></table></figure>
-<h3 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h3><ol>
-<li>Iterate from the end of string, skip until a non ‘ ‘ character.</li>
-<li>Iterate from the non ‘ ‘ character, add 1 for each non ‘ ‘ char, return if meet with a ‘ ‘.</li>
-</ol>
-<h2 id="66-Plus-One"><a href="#66-Plus-One" class="headerlink" title="66-Plus One"></a>66-Plus One</h2><p><strong><em>Easy</em></strong>      </p>
-<h3 id="Problem-Description-2"><a href="#Problem-Description-2" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given a non-empty array of digits representing a non-negative integer, plus one to the integer.<br>The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.<br>You may assume the integer does not contain any leading zero, except the number 0 itself.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3]</span><br><span class="line">Output: [1,2,4]</span><br><span class="line">Explanation: The array represents the integer 123.</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [4,3,2,1]</span><br><span class="line">Output: [4,3,2,2]</span><br><span class="line">Explanation: The array represents the integer 4321.</span><br></pre></td></tr></table></figure>
-<h3 id="My-Solution-2"><a href="#My-Solution-2" class="headerlink" title="My Solution:"></a>My Solution:</h3><ol>
-<li>O(n) for loop, add 1 to each digit if <em>carry</em> is true, return otherwise.</li>
-<li>After for loop, if <em>carry</em> is still true, it means we need another digit for our plus one answer.<br> Another for loop, move all digits to the next index and add ‘1’ in the beginning.</li>
-</ol>
+        <h2 id="2-Add-Two-Numbers"><a href="#2-Add-Two-Numbers" class="headerlink" title="2. Add Two Numbers"></a>2. Add Two Numbers</h2><p><strong><em>Medium</em></strong>      </p>
+<h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</span><br><span class="line">Output: 7 -&gt; 0 -&gt; 8</span><br><span class="line">Explanation: 342 + 465 &#x3D; 807.</span><br></pre></td></tr></table></figure>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>Use 2 pointer to record current node within l1 and l2. Add each pair of number from the head. Use a boolean to record carryover.<br>When any of the 2 pointer is null, traverse through the non-empty linkedlist. Remember to calculate carryover in every while-loop as well as when traversing ends.</p>
+<h2 id="3-Longest-Substring-Without-Repeating-Characters"><a href="#3-Longest-Substring-Without-Repeating-Characters" class="headerlink" title="3. Longest Substring Without Repeating Characters"></a>3. Longest Substring Without Repeating Characters</h2><p><strong><em>Medium</em></strong>      </p>
+<h3 id="Problem-Description-1"><a href="#Problem-Description-1" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given a string, find the length of the longest substring without repeating characters.</p>
+<p>For example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;abcabcbb&quot;</span><br><span class="line">Output: 3 </span><br><span class="line">Explanation: The answer is &quot;abc&quot;, with the length of 3.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;bbbbb&quot;</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: The answer is &quot;b&quot;, with the length of 1.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;pwwkew&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: The answer is &quot;wke&quot;, with the length of 3. </span><br><span class="line">             Note that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.</span><br></pre></td></tr></table></figure>
+<h3 id="My-Solution-1"><a href="#My-Solution-1" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>O(n) time: Use a string(hashset is better) to store current non-repeated substring. If current char is contained in the substring indexed at <em>last</em>, slide the left bound to <em>last+1</em>. Otherwise, increase the right bound and add current char to the string/set. Return the max value.</p>
+<h2 id="11-Container-With-Most-Water"><a href="#11-Container-With-Most-Water" class="headerlink" title="11. Container With Most Water"></a>11. Container With Most Water</h2><p><strong><em>Medium</em></strong>      </p>
+<h3 id="Problem-Description-2"><a href="#Problem-Description-2" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given n non-negative integers a1, a2, …, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,8,6,2,5,4,8,3,7]</span><br><span class="line">Output: 49</span><br></pre></td></tr></table></figure>
+<h3 id="My-Solution-2"><a href="#My-Solution-2" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>Use 2 number refering left&amp;right bound respectively. Loop until left&amp;bound meets: 1.Calculate current box area. 2.Increase the left pointer by 1 if it’s lower than right bound and vice versa. Return the max area among all calculations.</p>
+<h2 id="46-Permutations"><a href="#46-Permutations" class="headerlink" title="46. Permutations"></a>46. Permutations</h2><p><strong><em>Medium</em></strong>      </p>
+<h3 id="Problem-Description-3"><a href="#Problem-Description-3" class="headerlink" title="Problem Description:"></a>Problem Description:</h3><p>Given a collection of distinct integers, return all possible permutations.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3]</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [1,2,3],</span><br><span class="line">  [1,3,2],</span><br><span class="line">  [2,1,3],</span><br><span class="line">  [2,3,1],</span><br><span class="line">  [3,1,2],</span><br><span class="line">  [3,2,1]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="My-Solution-3"><a href="#My-Solution-3" class="headerlink" title="My Solution:"></a>My Solution:</h3><p>Recursively build list of lists. Each permutation is generated with permutation n-1.</p>
 
     </div>
 
@@ -281,13 +280,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/02/01/LeetCode-0201/" rel="prev" title="LeetCode-0201">
-      <i class="fa fa-chevron-left"></i> LeetCode-0201
+    <a href="/2020/04/21/%E6%88%91%E4%BB%AC%E4%BB%A8/" rel="prev" title="我们仨">
+      <i class="fa fa-chevron-left"></i> 我们仨
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/02/06/LeetCode-0206/" rel="next" title="LeetCode-0206">
-      LeetCode-0206 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -347,7 +343,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#53-Maximum-Subarray"><span class="nav-number">1.</span> <span class="nav-text">53-Maximum Subarray</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#58-Length-of-Last-Word"><span class="nav-number">2.</span> <span class="nav-text">58-Length of Last Word</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#66-Plus-One"><span class="nav-number">3.</span> <span class="nav-text">66-Plus One</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Add-Two-Numbers"><span class="nav-number">1.</span> <span class="nav-text">2. Add Two Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Longest-Substring-Without-Repeating-Characters"><span class="nav-number">2.</span> <span class="nav-text">3. Longest Substring Without Repeating Characters</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-Container-With-Most-Water"><span class="nav-number">3.</span> <span class="nav-text">11. Container With Most Water</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#46-Permutations"><span class="nav-number">4.</span> <span class="nav-text">46. Permutations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-Description-3"><span class="nav-number">4.1.</span> <span class="nav-text">Problem Description:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution-3"><span class="nav-number">4.2.</span> <span class="nav-text">My Solution:</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
