@@ -46,17 +46,17 @@
   };
 </script>
 
-  <meta name="description" content="Medium       Tree Traversal(a) Inorder (Left, Root, Right) - 中序(b) Preorder (Root, Left, Right) - 前序(c) Postorder (Left, Right, Root) - 后序 题目描述:You are given two non-empty linked lists representing tw">
+  <meta name="description" content="Medium       Tree Traversal(a) Inorder (Left, Root, Right) - 中序(b) Preorder (Root, Left, Right) - 前序(c) Postorder (Left, Right, Root) - 后序 题目描述:Given a binary tree, return the inorder traversal of its">
 <meta property="og:type" content="article">
 <meta property="og:title" content="94. Binary Tree Inorder Traversal">
 <meta property="og:url" content="https://jetlagpoetry.github.io/2020/06/01/LeetCode-Q94/index.html">
 <meta property="og:site_name" content="Days with Runrun">
-<meta property="og:description" content="Medium       Tree Traversal(a) Inorder (Left, Root, Right) - 中序(b) Preorder (Root, Left, Right) - 前序(c) Postorder (Left, Right, Root) - 后序 题目描述:You are given two non-empty linked lists representing tw">
+<meta property="og:description" content="Medium       Tree Traversal(a) Inorder (Left, Root, Right) - 中序(b) Preorder (Root, Left, Right) - 前序(c) Postorder (Left, Right, Root) - 后序 题目描述:Given a binary tree, return the inorder traversal of its">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-03T11:13:59.896Z">
+<meta property="article:modified_time" content="2020-06-03T12:05:52.654Z">
 <meta property="article:author" content="Jingyuan">
-<meta property="article:tag" content="LinkedList">
+<meta property="article:tag" content="Tree">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://jetlagpoetry.github.io/2020/06/01/LeetCode-Q94/">
@@ -220,7 +220,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-03 19:13:59" itemprop="dateModified" datetime="2020-06-03T19:13:59+08:00">2020-06-03</time>
+                <time title="Modified: 2020-06-03 20:05:52" itemprop="dateModified" datetime="2020-06-03T20:05:52+08:00">2020-06-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,16 +253,22 @@
       
         <p><strong><em>Medium</em></strong>      </p>
 <h3 id="Tree-Traversal"><a href="#Tree-Traversal" class="headerlink" title="Tree Traversal"></a>Tree Traversal</h3><p>(a) Inorder (Left, Root, Right) - 中序<br>(b) Preorder (Root, Left, Right) - 前序<br>(c) Postorder (Left, Right, Root) - 后序</p>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述:"></a>题目描述:</h3><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</span><br><span class="line">Output: 7 -&gt; 0 -&gt; 8</span><br><span class="line">Explanation: 342 + 465 &#x3D; 807.</span><br></pre></td></tr></table></figure>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述:"></a>题目描述:</h3><p>Given a binary tree, return the inorder traversal of its nodes’ values.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,null,2,3]</span><br><span class="line">   1</span><br><span class="line">    \</span><br><span class="line">     2</span><br><span class="line">    &#x2F;</span><br><span class="line">   3</span><br><span class="line"></span><br><span class="line">Output: [1,3,2]</span><br></pre></td></tr></table></figure>
 
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路:"></a>思路:</h3><ul>
-<li>基础链表题目。</li>
-<li>使用两个指针分别指向l1和l2的节点，从头部开始。 循环相加每个pair，用布尔值记录进位信息。</li>
-<li>当其中一个链表被遍历完时，再循环加另一个非空的链表，同样记录每一步的进位信息。</li>
+<h3 id="思路一"><a href="#思路一" class="headerlink" title="思路一:"></a>思路一:</h3><ul>
+<li>简单递归实现中序遍历</li>
+<li>在每个节点，将左节点返回结果、当前节点的值、右节点返回结果依此添加到当前集合中并返回。</li>
+<li>时间复杂度：平均情况下，O(h)=(logN)；最坏情况下，O(h)=O(n)。</li>
+<li>空间复杂度：O(h)<h3 id="代码一"><a href="#代码一" class="headerlink" title="代码一"></a>代码一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">        if(root&#x3D;&#x3D;null) return new LinkedList&lt;Integer&gt;();</span><br><span class="line">        List&lt;Integer&gt; list &#x3D; new LinkedList&lt;Integer&gt;();</span><br><span class="line">        if(root.left!&#x3D;null)&#123;</span><br><span class="line">            list.addAll(inorderTraversal(root.left));</span><br><span class="line">        &#125;</span><br><span class="line">        list.add(root.val);</span><br><span class="line">        if(root.right!&#x3D;null)&#123;</span><br><span class="line">            list.addAll(inorderTraversal(root.right));</span><br><span class="line">        &#125;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路二"><a href="#思路二" class="headerlink" title="思路二:"></a>思路二:</h3></li>
+<li>使用循环和栈来模拟递归过程</li>
+<li>初始化空栈，当前节点设置为根节点。 每次循环时做两件事：一，不断地将当前节点最左侧的一系列子节点推入战中，直到没有左子节点。 二，步骤一做完后，弹出栈中最顶元素（想象为当前子树的左侧最远孩子），处理这个最顶元素（本题中是将节点值加入list），之后将右子节点设置为当前节点。当节点全部遍历完且栈为空时停止循环。</li>
+<li>时间复杂度：平均情况下，O(h)=(logN)；最坏情况下，O(h)=O(n)。</li>
+<li>空间复杂度：O(h)<h3 id="代码二"><a href="#代码二" class="headerlink" title="代码二"></a>代码二</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public List&lt;Integer&gt; inorderTraversal(TreeNode root) &#123;</span><br><span class="line">        Stack&lt;TreeNode&gt; stack &#x3D; new Stack&lt;&gt;();</span><br><span class="line">        List&lt;Integer&gt; list &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">        TreeNode current &#x3D; root;</span><br><span class="line">        while(current!&#x3D;null||!stack.isEmpty())&#123;</span><br><span class="line">            while(current!&#x3D;null)&#123;</span><br><span class="line">                stack.push(current);</span><br><span class="line">                current &#x3D; current.left;</span><br><span class="line">            &#125;</span><br><span class="line">            current &#x3D; stack.pop();</span><br><span class="line">            list.add(current.val);</span><br><span class="line">            current &#x3D; current.right;</span><br><span class="line">        &#125;</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public ListNode addTwoNumbers(ListNode l1, ListNode l2) &#123;</span><br><span class="line">        ListNode head&#x3D;null, cur&#x3D;null;</span><br><span class="line">        boolean carry &#x3D; false;</span><br><span class="line">        while(l1!&#x3D;null&amp;&amp;l2!&#x3D;null)&#123;</span><br><span class="line">            int value &#x3D; l1.val+l2.val+(carry?1:0);</span><br><span class="line">            if(head&#x3D;&#x3D;null)&#123;</span><br><span class="line">                head &#x3D; new ListNode(value%10);</span><br><span class="line">                cur &#x3D; head;</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                cur.next &#x3D; new ListNode(value%10);</span><br><span class="line">                cur &#x3D; cur.next;</span><br><span class="line">            &#125;</span><br><span class="line">            carry &#x3D; value&gt;&#x3D;10;</span><br><span class="line">            l1 &#x3D; l1.next;</span><br><span class="line">            l2 &#x3D; l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        while(l1!&#x3D;null)&#123;</span><br><span class="line">            int value &#x3D; l1.val+(carry?1:0);</span><br><span class="line">            cur.next &#x3D; new ListNode(value%10);</span><br><span class="line">            cur &#x3D; cur.next;</span><br><span class="line">            carry &#x3D; value&gt;&#x3D;10;</span><br><span class="line">            l1 &#x3D; l1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        while(l2!&#x3D;null)&#123;</span><br><span class="line">            int value &#x3D; l2.val+(carry?1:0);</span><br><span class="line">            cur.next &#x3D; new ListNode(value%10);</span><br><span class="line">            cur &#x3D; cur.next;</span><br><span class="line">            carry &#x3D; value&gt;&#x3D;10;</span><br><span class="line">            l2 &#x3D; l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(carry)&#123;</span><br><span class="line">            cur.next &#x3D; new ListNode(1);</span><br><span class="line">        &#125;</span><br><span class="line">        return head;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -271,7 +277,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/LinkedList/" rel="tag"># LinkedList</a>
+              <a href="/tags/Tree/" rel="tag"># Tree</a>
           </div>
 
         
@@ -280,8 +286,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/27/LeetCode-0527/" rel="prev" title="LeetCode-0527">
-      <i class="fa fa-chevron-left"></i> LeetCode-0527
+    <a href="/2020/06/01/LeetCode-Q2/" rel="prev" title="2. Add Two Numbers">
+      <i class="fa fa-chevron-left"></i> 2. Add Two Numbers
     </a></div>
       <div class="post-nav-item"></div>
     </div>
@@ -343,7 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tree-Traversal"><span class="nav-number">1.</span> <span class="nav-text">Tree Traversal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">3.</span> <span class="nav-text">思路:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tree-Traversal"><span class="nav-number">1.</span> <span class="nav-text">Tree Traversal</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">2.</span> <span class="nav-text">题目描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路一"><span class="nav-number">3.</span> <span class="nav-text">思路一:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码一"><span class="nav-number">4.</span> <span class="nav-text">代码一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路二"><span class="nav-number">5.</span> <span class="nav-text">思路二:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码二"><span class="nav-number">6.</span> <span class="nav-text">代码二</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -357,7 +363,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -370,7 +376,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
