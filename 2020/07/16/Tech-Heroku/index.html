@@ -61,7 +61,7 @@
 <meta property="og:image" content="https://jetlagpoetry.github.io/2020/07/16/Tech-Heroku/autodeploy.png">
 <meta property="og:image" content="https://jetlagpoetry.github.io/2020/07/16/Tech-Heroku/proc.png">
 <meta property="article:published_time" content="2020-07-16T03:08:35.082Z">
-<meta property="article:modified_time" content="2020-07-16T03:47:39.432Z">
+<meta property="article:modified_time" content="2020-07-16T03:55:02.180Z">
 <meta property="article:author" content="Jingyuan">
 <meta property="article:tag" content="deployment">
 <meta property="article:tag" content="heroku">
@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-07-16 11:08:35 / Modified: 11:47:39" itemprop="dateCreated datePublished" datetime="2020-07-16T11:08:35+08:00">2020-07-16</time>
+              <time title="Created: 2020-07-16 11:08:35 / Modified: 11:55:02" itemprop="dateCreated datePublished" datetime="2020-07-16T11:08:35+08:00">2020-07-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,14 +256,18 @@
 
       
         <ol>
-<li>Signup a HEROKU account. For <strong>Primary development language</strong> we can select an arbitrary language.<br><img src="/2020/07/16/Tech-Heroku/signup.png" alt="signup"></li>
-<li>Click on <strong>New</strong> on the right top and select <strong>Create new app</strong>.<br><img src="/2020/07/16/Tech-Heroku/createnew.png" alt="createnew"></li>
-<li>Choose a name for the new app and click on <strong>Create app</strong>.<br><img src="/2020/07/16/Tech-Heroku/entername.png" alt="entername"> </li>
-<li>Now we enter the <strong>Deploy</strong> section of the dashboard. Choose a deployment method. You can install Heroku Git and upload the project through git commands. But to make things easier, I will use <strong>Connect to Github</strong>, which enables automatically updating the deployment as long as you push the latest code to github repo. Now enter the name of the repository and click on <strong>Search</strong>.<br><img src="/2020/07/16/Tech-Heroku/connectgithub.png" alt="connectgithub"><br>Select the repo found and click on <strong>Connect</strong>.<br><img src="/2020/07/16/Tech-Heroku/connect.png" alt="connect"></li>
-<li>Now the heroku app is associated with your github repo! For convenience’s sake, we could choose automatic deploys. Choose a branch of the repo (in my case <strong>master</strong> ) and click on <strong>Enable Automatic Deploys</strong>.<br><img src="/2020/07/16/Tech-Heroku/autodeploy.png" alt="autodeploy"><br>Uptill now the heroku configuration is finished and as heroku says:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Automatic deploys from  master are enabled.</span><br><span class="line">Every push to master will deploy a new version of this app. Deploys happen automatically: be sure that this branch in GitHub is always in a deployable state and any tests have passed before you push. Learn more.</span><br></pre></td></tr></table></figure></li>
+<li>Signup a HEROKU account. For <strong>Primary development language</strong> we can select an arbitrary language.<img src="/2020/07/16/Tech-Heroku/signup.png"></li>
+<li>Click on <strong>New</strong> on the right top and select <strong>Create new app</strong>.<img src="/2020/07/16/Tech-Heroku/createnew.png"></li>
+<li>Choose a name for the new app and click on <strong>Create app</strong>.<img src="/2020/07/16/Tech-Heroku/entername.png"></li>
+<li>Now we enter the <strong>Deploy</strong> section of the dashboard. Choose a deployment method. You can install Heroku Git and upload the project through git commands. But to make things easier, I will use <strong>Connect to Github</strong>, which enables automatically updating the deployment as long as you push the latest code to github repo. Now enter the name of the repository and click on <strong>Search</strong>.<img src="/2020/07/16/Tech-Heroku/connectgithub.png">
+Select the repo found and click on __Connect__.
+<img src="/2020/07/16/Tech-Heroku/connect.png"></li>
+<li>Now the heroku app is associated with your github repo! For convenience’s sake, we could choose automatic deploys. Choose a branch of the repo (in my case <strong>master</strong> ) and click on <strong>Enable Automatic Deploys</strong>.<img src="/2020/07/16/Tech-Heroku/autodeploy.png">
+Uptill now the heroku configuration is finished and as heroku says:
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Automatic deploys from  master are enabled.</span><br><span class="line">Every push to master will deploy a new version of this app. Deploys happen automatically: be sure that this branch in GitHub is always in a deployable state and any tests have passed before you push. Learn more.</span><br></pre></td></tr></table></figure></li>
 <li>After all the work above is done, I still cannot enter my webapp through heroku. And that is because we have to tell heroku how to start the web server.<br>Create a Procfile in the root folder by running the command:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch Procfile</span><br></pre></td></tr></table></figure>
 and add the command to run the service. My project is using <strong>express node.js</strong> server + <strong>vue.js</strong> front-end and previously on cmd I used the command <code>npm start</code>. And in <strong>package.json</strong>, it is configured as <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line"> &quot;start&quot;: &quot;node .&#x2F;bin&#x2F;www&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-So the command to truly start my service is the latter one.<br>Add <code>web: node ./bin/www</code> in <strong>Procfile</strong>. Sure for some people, they might use <code>web:node index.js</code>. It depends on your website entry.<br><img src="/2020/07/16/Tech-Heroku/proc.png" alt="proc"></li>
+So the command to truly start my service is the latter one.<br>Add <code>web: node ./bin/www</code> in <strong>Procfile</strong>. Sure for some people, they might use <code>web:node index.js</code>. It depends on your website entry.<img src="/2020/07/16/Tech-Heroku/proc.png"></li>
 <li>Since the project contains http data transmission, we need to configure a new URL for the front-end to send. When running locally the baseURL was <code>http://localhost:3000/api</code> where 3000 is the port that express running on. But on heroku the port is uncertain and the hostname is different as well. The baseURL should be changed to <code>https://opr-guide.herokuapp.com/api</code> where <code>opr-guide</code> is your heroku app name and <code>api</code> is the api route prefix.</li>
 <li>Push the latest changes to github and click on <strong>open app</strong> on the top right corner on Heroku.</li>
 <li>The project is ready to go!</li>
