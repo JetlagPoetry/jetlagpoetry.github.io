@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://jetlagpoetry.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="backtrackDP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="39. Combination Sum">
+<meta property="og:url" content="https://jetlagpoetry.github.io/2020/06/09/LeetCode-Q39/index.html">
+<meta property="og:site_name" content="Days with Runrun">
+<meta property="og:description" content="backtrackDP">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-06-11T05:29:34.983Z">
+<meta property="article:author" content="Jingyuan">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://jetlagpoetry.github.io/2020/06/09/LeetCode-Q39/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>39. Combination Sum | Days with Runrun</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Days with Runrun</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-fw fa-calendar"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="https://jetlagpoetry.github.io/2020/06/09/LeetCode-Q39/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jingyuan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Days with Runrun">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          39. Combination Sum
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-09 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-09T00:00:00+08:00">2020-06-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-11 13:29:34" itemprop="dateModified" datetime="2020-06-11T13:29:34+08:00">2020-06-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
+                    <span itemprop="name">LeetCode</span>
+                  </a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/1-100%E9%A2%98/" itemprop="url" rel="index">
+                    <span itemprop="name">1-100题</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">backtrack,DP</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong><em>Medium</em></strong>      </p>
+<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述:"></a>题目描述:</h3><p>Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.</p>
+<p>The same repeated number may be chosen from candidates unlimited number of times.</p>
+<p>Note:</p>
+<p>All numbers (including target) will be positive integers.<br>The solution set must not contain duplicate combinations.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: candidates &#x3D; [2,3,6,7], target &#x3D; 7,</span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [7],</span><br><span class="line">  [2,2,3]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: candidates &#x3D; [2,3,5], target &#x3D; 8,</span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [2,2,2,2],</span><br><span class="line">  [2,3,3],</span><br><span class="line">  [3,5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="思路一"><a href="#思路一" class="headerlink" title="思路一:"></a>思路一:</h3><ul>
+<li>回溯法</li>
+<li>使用递归不断向下创建combination，将一个新的candidate number添加到本节点已有的list中，直到超过target时停止，等于target时添加到答案集合中。 需要注意的是，每个节点内可添加的数字并不是全部candidate，我们需要注意candidate的顺序，否则会出现重复项。</li>
+<li>例 candidates = [2,3,6,7], target = 7, <ol>
+<li>当前路径是[2]时，那么接下来分别添加2、3、6、7四个元素，得到[2,2],[2,3],[2,6],[2,7]四个节点，后两个组合大于target被丢弃。</li>
+<li>当前路径是[2,3]时，我们规定不能添加比最后一个元素更小的数了，那么分别添加3、6、7后，得到[2,3,3],[2,3,6],[2,3,7]，同样后两个大于target。</li>
+</ol>
+</li>
+</ul>
+<h3 id="代码一"><a href="#代码一" class="headerlink" title="代码一"></a>代码一</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    </span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; list &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">    int target &#x3D; 0;</span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; combinationSum(int[] candidates, int target) &#123;</span><br><span class="line">        this.target &#x3D; target;</span><br><span class="line">        backtrack(new ArrayList&lt;Integer&gt;(), 0, candidates, 0);</span><br><span class="line">        return list;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public void backtrack(List&lt;Integer&gt; currentList, int currentSum, int[] candidates, int start)&#123;</span><br><span class="line">        if(currentSum&gt;target) return;</span><br><span class="line">        if(currentSum&#x3D;&#x3D;target)&#123;</span><br><span class="line">            list.add(new ArrayList&lt;Integer&gt;(currentList));</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i&#x3D;start; i&lt;candidates.length; i++)&#123;</span><br><span class="line">            currentList.add(candidates[i]);</span><br><span class="line">            backtrack(currentList, currentSum+candidates[i], candidates, i);</span><br><span class="line">            currentList.remove(currentList.size()-1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="思路二："><a href="#思路二：" class="headerlink" title="思路二："></a>思路二：</h3><ul>
+<li>动态规划</li>
+<li>对于target=n的情况来说，依此构建并存储target=0至target=n-1时的combination。</li>
+<li>初始时，只有opt(0)=[[]]。在每一步，将candidate number与可能的每个数字相加，并在他们之和的元素里添加可能组成的所有列表。</li>
+<li>例如当前candidate是3，target=7，那么需要考虑的情况有0,1,2,3,4。<br>  0–&gt;在opt(3)中添加[3]<br>  1–&gt;在opt(4)中添加[opt(1)[0],3],[opt(1)[1],3],[opt(1)[n],3]<br>  2–&gt;在opt(5)中添加[opt(2)[n],3]<br>  3–&gt;在opt(6)中添加[opt(3)[n],3]<br>  4–&gt;在opt(7)中添加[opt(4)[n],3]</li>
+<li>全部candidate遍历过后（只遍历一次，需要保证candidate有顺序），得到opt(target)返回。</li>
+</ul>
+<h3 id="代码二："><a href="#代码二：" class="headerlink" title="代码二："></a>代码二：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    </span><br><span class="line">    public List&lt;List&lt;Integer&gt;&gt; combinationSum(int[] candidates, int target) &#123;</span><br><span class="line">        Map&lt;Integer, List&lt;List&lt;Integer&gt;&gt;&gt; dp &#x3D; new HashMap&lt;&gt;();</span><br><span class="line">        List&lt;Integer&gt; init &#x3D; new ArrayList&lt;Integer&gt;();</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; initList &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">        initList.add(init);</span><br><span class="line">        dp.put(0, initList);</span><br><span class="line">        for(int candidate: candidates)&#123;</span><br><span class="line">           for(int remain&#x3D;0; remain&lt;&#x3D;target-candidate; remain++)&#123;</span><br><span class="line">               for(List&lt;Integer&gt; list: dp.getOrDefault(remain, new ArrayList&lt;List&lt;Integer&gt;&gt;()))&#123;</span><br><span class="line">                   List&lt;Integer&gt; newList &#x3D; new ArrayList&lt;&gt;(list);</span><br><span class="line">                   newList.add(candidate);</span><br><span class="line">                   if(dp.get(remain+candidate)&#x3D;&#x3D;null)&#123;</span><br><span class="line">                       List&lt;List&lt;Integer&gt;&gt; listList &#x3D; new ArrayList&lt;&gt;();</span><br><span class="line">                       listList.add(newList);</span><br><span class="line">                       dp.put(remain+candidate, listList);</span><br><span class="line">                   &#125;else&#123;</span><br><span class="line">                       dp.get(remain+candidate).add(newList);</span><br><span class="line">                   &#125;</span><br><span class="line">                   </span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">        return dp.getOrDefault(target, new ArrayList&lt;List&lt;Integer&gt;&gt;());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/05/LeetCode-Q22/" rel="prev" title="22. Generate Parentheses">
+      <i class="fa fa-chevron-left"></i> 22. Generate Parentheses
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/12/LeetCode-Q42/" rel="next" title="42. Trapping Rain Water">
+      42. Trapping Rain Water <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目描述"><span class="nav-number">1.</span> <span class="nav-text">题目描述:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路一"><span class="nav-number">2.</span> <span class="nav-text">思路一:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码一"><span class="nav-number">3.</span> <span class="nav-text">代码一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路二："><span class="nav-number">4.</span> <span class="nav-text">思路二：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码二："><span class="nav-number">5.</span> <span class="nav-text">代码二：</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jingyuan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">38</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jingyuan</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
